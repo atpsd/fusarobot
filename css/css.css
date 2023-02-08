@@ -1,0 +1,173 @@
+
+/*Rimuove area di selezione blu su mobile bottoni etc*/
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/*Rende il testo generato non selezionabile*/
+.noselect {
+  cursor: default;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+}
+
+
+/*per dimensioni verticali textarea*/
+html, body { margin: 0; padding: 0; }
+html, body, #id1, #id2, #id2 textarea { height: 89%; }
+
+/*Area di testo frase generata*/
+textarea {  
+  width: 100%;
+  border: none;
+  outline: none;
+  overflow: auto;
+  resize:none;
+}
+
+#myText {
+  overflow-y: auto;
+}
+
+/*WEBFONT UTILIZZATE IN LOCALE CON 
+Google Webfont Helper: https://gwfh.mranftl.com/fonts*/
+
+/* martel-regular - latin */
+@font-face {
+  font-family: 'Martel'; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/martel-v10-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/martel-v10-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/martel-v10-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/martel-v10-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/martel-v10-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/martel-v10-latin-regular.svg#Martel') format('svg'); /* Legacy iOS */
+}
+/* martel-800 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Martel';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../fonts/martel-v10-latin-800.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/martel-v10-latin-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/martel-v10-latin-800.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/martel-v10-latin-800.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/martel-v10-latin-800.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/martel-v10-latin-800.svg#Martel') format('svg'); /* Legacy iOS */
+}
+/* martel-900 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Martel';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../fonts/martel-v10-latin-900.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/martel-v10-latin-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/martel-v10-latin-900.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/martel-v10-latin-900.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/martel-v10-latin-900.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/martel-v10-latin-900.svg#Martel') format('svg'); /* Legacy iOS */
+}
+/*FINE WEBFONT*/
+
+
+
+body {
+  font-family: "Martel", sans-serif;
+  background-color: #FBF8F3;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Martel", sans-serif;
+/*  color: DodgerBlue;*/
+/*  font-weight: 900;*/
+  font-weight: 800;
+}
+
+/*.mySlides {display: none}*/
+
+/* BOTTONE GENERATORE inizio */
+.btn {  
+  background-color: DodgerBlue; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 15px 20px; /* Some padding */
+  font-size: 18px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  display: table-cell;
+  vertical-align: middle;
+  box-shadow: 7px 6px 1px 1px rgba(0, 0, 0, 0.24);
+  transition: 0.1s all;
+
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+
+.btn:active {
+/*  transform: scale(0.98);*/
+    transform: translateY(4px) translateX(4px);
+    /* Scaling button to 0.98 to its original size */
+    box-shadow: 3px 2px 1px 1px rgba(0, 0, 0, 0.24);
+    /* Lowering the shadow */
+}
+
+/* BOTTONE GENERATORE fine */
+
+/* INFO BLU NEL FOOTER */
+.btn_info {  
+  background-color: DodgerBlue; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  text-decoration: none;
+}
+
+
+/* FOTO FUSARO */
+.img-container {
+  display: block;
+  top: 2%;
+  width: 100%;
+}
+
+.img-container img{
+  width: 300px;
+  height: 300px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* RIDIMENSIONAMENTO SU MOBILE */
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+
+  /* FOTO FUSARO */
+    .img-container img {
+      width:  200px;
+      height: 200px;
+    }
+
+    #myText {
+      font-size: 14px;
+    }
+
+    footer button { 
+      margin-bottom: 5% 
+    }
+
+}
+
+

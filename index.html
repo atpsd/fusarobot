@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+<title>FusaroBot</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="./css/w3.css">
+<link rel="stylesheet" href="./css/font-awesome.min.css" rel="preload">
+<link rel="stylesheet" href="./css/css.css">
+
+<!-- Facebook -->
+<meta property="og:url"                content="https://fusarobot.altervista.org/" />
+<meta property="og:type"               content="article" />
+<meta property="og:title"              content="FusaroBot" />
+<meta property="og:description"        content="Generatore automatico di frasi filosofiche" />
+<meta property="og:image"              content="https://fusarobot.altervista.org/pics/fusarobot_preview.jpg" />
+
+<!-- CARICA IL FILE GRAMMATICA -->
+<script src="./grammatica/grammatica_fusarobot-min.js"></script>
+
+</head>
+
+
+
+<body onload="GeneraFrase()">
+
+
+<!-- CONTENUTO PAGINA -->
+  <div id="id1" class="w3-content">
+
+
+  <!-- SEZIONE PRINCIPALE -->
+  <div id="id2" class="w3-container w3-content w3-center w3-padding-8" style="max-width:800px">
+ 
+
+  <!-- Usare questo blocco commentato per titolo semplice -->
+  <!-- <div class="w3-container w3-black w3-center"> -->
+
+  <div class="w3-container w3-center">
+
+    <!-- TITOLO SEMPLICE -->
+    <!-- <h3>fusarobot</h3> -->
+
+
+      <!-- FOTO -->
+      <div class="img-container">
+       <img src="pics/fusaro.png" alt="Diego Fusaro">
+      </div>
+
+      <!-- Usare questo blocco commentato "textarea" per TESTO SCROLLABILE -->
+      <!-- </div> -->
+          <!-- TESTO GENERATO -->
+          <!-- <textarea id="myText" readonly="readonly" unselectable="on" class="noselect w3-center w3-margin-top w3-padding-16 w3-smallxxx"></textarea> -->
+      <!-- </div> -->
+
+      </div>
+          <!-- TESTO GENERATO -->
+          <p id="myText" readonly="readonly" unselectable="on" class="noselect w3-center w3-margin-top w3-padding-16 w3-smallxxx"></p>
+      </div>
+  
+</div>
+
+
+
+<!-- FOOTER -->
+<footer class="w3-center w3-small w3-display-bottommiddle" style="white-space: nowrap">
+<!-- <footer style="white-space: nowrap"> -->
+
+    <!-- BOTTONE refresh generatore -->
+    <button style="margin-bottom: 10%; user-select: none;" class="btn w-mobile w3-round-xxlarge w3-padding-16 w-margin-bottom" onmouseup = "GeneraFrase()"><span style="white-space: nowrap">FusaroBot&nbsp;&nbsp;<i class="fa fa-refresh"></i></span></button>
+
+  <!-- <p class="w3-opacity"> -->
+  <p style="color: gray;">
+    Creato con 
+        <a href="http://polygen.org/" target="_Polygen">Polygen</a>
+        <a href="https://www.facebook.com/groups/35567209510" target="_Polygen">FB</a>
+    da  <a href="http://www.facebook.com/atpsd" target="_atpsd">ATPSD</a>&nbsp;
+        <a href="info.html" class="btn_info w3-round-xxlarge"><span>&nbsp;&nbsp;info&nbsp;&nbsp;</span></a>
+</p>
+</footer>
+
+
+
+<!-- FUNZIONE GENERA FRASE -->
+<script>
+  function GeneraFrase() {
+    let seed = ((new Date()).getTime()) % (2**32); /*randomizza le frasi in base al momento */
+    Polygen.pRngInit(seed); /* IMPORTANTE! */
+    polygen = Polygen.generate(grammar);
+    frase = polygen();
+    document.getElementById("myText").innerHTML = frase;
+  }
+</script>
+
+
+<!-- SCRIPT POLYGEN IN JAVASCRIPT -->
+<script src="./js/polygen_min.js"></script>
+
+
+
+</body>
+
+</html>
